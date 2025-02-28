@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="search-dropdown.css" />
+  </head>
+  <body>
+    <section class="container">
+      <div class="spinner-overlay" id="spinnerOverlay">
+        <div class="spinner-container">
+          <div class="spinner"></div>
+          <div class="spinner-text">Loading...</div>
+        </div>
+      </div>
+      <div class="search-filter-container">
+        <!-- Search Bar -->
+        <div class="search-wrapper">
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Search books by title..."
+          />
+          <svg
+            class="search-icon"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </div>
+
+        <!-- Dropdown Filter -->
+        <div class="dropdown-wrapper">
+          <select
+            id="genreSelect"
+            class="dropdown-button"
+            onchange="filterBooks()"
+          >
+            <option value="">Select a genre</option>
+          </select>
+        </div>
+      </div>
+      <div id="card-container"></div>
+      <div class="pagination-container">
+        <button id="prevBtn" class="pagination-btn" disabled>Previous</button>
+        <button id="nextBtn" class="pagination-btn">Next</button>
+      </div>
+    </section>
+  </body>
+  <script src="spinner.js"></script>
+  <script src="index.js"></script>
+</html>
